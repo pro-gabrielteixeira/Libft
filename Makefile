@@ -1,6 +1,6 @@
 NAME = Libft.a
-SRC = source.c
-OBJ = source.o
+SRC = *.c
+OBJ = *.o
 
 all: $(NAME)
 
