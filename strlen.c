@@ -6,18 +6,16 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 17:39:44 by gateixei          #+#    #+#             */
-/*   Updated: 2021/10/24 17:46:30 by gateixei         ###   ########.fr       */
+/*   Updated: 2021/11/07 18:59:04 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	strlen(char *str)
+int	ft_strlen(char *str)
 {
 	int	len;
 
 	len = 0;
-	while(str[len] != '\0')
-	{
+	while (str[len] != '\0')
 		len++;
-	}
 	return (len);
 }
