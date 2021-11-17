@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalnum.c                                          :+:      :+:    :+:   */
+/*   isascii.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 14:34:10 by gateixei          #+#    #+#             */
-/*   Updated: 2021/11/17 16:53:30 by gateixei         ###   ########.fr       */
+/*   Created: 2021/11/17 15:43:19 by gateixei          #+#    #+#             */
+/*   Updated: 2021/11/17 16:51:18 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(unsigned char *str)
+int	ft_isascii(unsigned char *str)
 {
 	int	c;
 
 	c = 0;
 	while (str[c] != '\0')
 	{
-		if ((str[c] >= 48 && str[c] <= 57)
-			|| (str[c] >= 65 && str[c] <= 90)
-			|| (str[c] >= 97 && str[c] <= 122))
+		if (str[c] >= 0 && str[c] <= 127)
 			c++;
 		else
 			return (0);

@@ -6,7 +6,7 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 14:34:53 by gateixei          #+#    #+#             */
-/*   Updated: 2021/11/17 15:01:03 by gateixei         ###   ########.fr       */
+/*   Updated: 2021/11/17 16:55:31 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_isdigit(unsigned char *str)
 		if (str[c] >= '0' && str[c] <= '9')
 			c++;
 		else
-			return (1);
+			return (0);
 	}
-	return (0);
+	return (1);
 }
