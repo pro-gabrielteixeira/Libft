@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalnum.c                                          :+:      :+:    :+:   */
+/*   isdigit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 14:34:10 by gateixei          #+#    #+#             */
-/*   Updated: 2021/11/17 16:53:30 by gateixei         ###   ########.fr       */
+/*   Created: 2021/11/17 14:34:53 by gateixei          #+#    #+#             */
+/*   Updated: 2021/11/17 16:55:31 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(unsigned char *str)
-{
-	int	c;
+#include "libft.h"
 
-	c = 0;
-	while (str[c] != '\0')
-	{
-		if ((str[c] >= 48 && str[c] <= 57)
-			|| (str[c] >= 65 && str[c] <= 90)
-			|| (str[c] >= 97 && str[c] <= 122))
-			c++;
-		else
-			return (0);
-	}
-	return (1);
+int	ft_isdigit(int c)
+{
+	c = c + '0';
+	if (c >= '0' && c <= '9')
+		return (c);
+	else
+		return (0);
 }

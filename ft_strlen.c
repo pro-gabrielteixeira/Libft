@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isascii.c                                          :+:      :+:    :+:   */
+/*   strlen.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 15:43:19 by gateixei          #+#    #+#             */
-/*   Updated: 2021/11/17 16:51:18 by gateixei         ###   ########.fr       */
+/*   Created: 2021/10/24 17:39:44 by gateixei          #+#    #+#             */
+/*   Updated: 2021/11/07 18:59:04 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(unsigned char *str)
-{
-	int	c;
+#include "libft.h"
 
-	c = 0;
-	while (str[c] != '\0')
-	{
-		if (str[c] >= 0 && str[c] <= 127)
-			c++;
-		else
-			return (0);
-	}
-	return (1);
+int	ft_strlen(char *str)
+{
+	int	len;
+
+	len = 0;
+	while (str[len] != '\0')
+		len++;
+	return (len);
 }

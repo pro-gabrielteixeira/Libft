@@ -1,12 +1,14 @@
 NAME = Libft.a
-SRC = *.c
-OBJ = *.o
+CFLAGS = -Wall -Wextra -Werror
+CC = gcc
+OBJ = ft_isalnum.o  ft_isalpha.o  ft_isascii.o  ft_isdigit.o  ft_strlen.o
 
 all: $(NAME)
 
-$(NAME):
-	gcc -Wall -Wextra -Werror -c $(SRC)
-	gcc -Wall -Wextra -Werror -o $(NAME) $(OBJ)
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+
+.PHONY: clean fclean re
 
 clean:
 	rm -f $(OBJ)

@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalpha.c                                          :+:      :+:    :+:   */
+/*   isascii.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/07 19:02:53 by gateixei          #+#    #+#             */
-/*   Updated: 2021/11/17 15:03:04 by gateixei         ###   ########.fr       */
+/*   Created: 2021/11/17 15:43:19 by gateixei          #+#    #+#             */
+/*   Updated: 2021/11/17 16:51:18 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(unsigned char *str)
-{
-	int	c;
+#include "libft.h"
 
-	c = 0;
-	while (str[c] != '\0')
-	{
-		if ((str[c] >= 65 && str[c] <= 90)
-			|| (str[c] >= 97 && str[c] <= 122))
-			c++;
-		else
-			return (0);
-	}
-	return (1);
+int	ft_isascii(int c)
+{
+	c = c + '0';
+	if (c >= 0 && c <= 127)
+		return (c);
+	else
+		return (0);
 }
