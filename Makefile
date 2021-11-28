@@ -1,23 +1,23 @@
-NAME = Libft.a
-CFLAGS = -Wall -Wextra -Werror
-HEADER_FILE = .libft.h
+NAME = libft.a
+HEADER = libft.h
+SRC = 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_strlen.c ft_atoi.c
+OBJ = ${SRC:.c=.o}
+
 CC = gcc
-OBJ = ft_isalnum.o  ft_isalpha.o  ft_isascii.o  ft_isdigit.o  ft_strlen.o
-SRC = 
+FLAG = -Wextra -Wall -Werror
 
-all: $(NAME)
+all: ${NAME}
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -I${HEADER_FILE}-o $(NAME) $(OBJ)
+${NAME}: ${SRC}
+	${CC} ${FLAG} -I${HEADER} -c ${SRC}
 	ar rc ${NAME} ${OBJ}
-	ranlib ${NAME}
 
 clean:
-	rm -f $(OBJ)
+	rm -f *.o
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f ${NAME}
 
 re: fclean all
 
-.PHONY: clean fclean re
+.PHONY: all clean fclean re
