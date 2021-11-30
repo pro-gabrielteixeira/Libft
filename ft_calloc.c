@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/28 19:18:59 by gateixei          #+#    #+#             */
-/*   Updated: 2021/11/30 21:56:21 by gateixei         ###   ########.fr       */
+/*   Created: 2021/11/30 19:06:58 by gateixei          #+#    #+#             */
+/*   Updated: 2021/11/30 22:56:12 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
+#include "libft.h"
 #include <stdlib.h>
 
-int		ft_isalnum(int c);
+void	*ft_calloc(int count, int size)
+{
+	char	*ptr;
+	int		c;
 
-int		ft_isalpha(int c);
-
-int		ft_isascii(int c);
-
-int		ft_isdigit(int c);
-
-int		ft_strlen(char *str);
-
-int		ft_atoi(char *str);
-
-void	ft_bzero(char *str, int size);
-
-void	*ft_calloc(int count, int size);
-
-#endif
+	c = 0;
+	ptr = (char *) malloc(count * size);
+	while (c <= (size * count))
+		ptr[c++] = '0';
+	return ((void *)ptr);
+}

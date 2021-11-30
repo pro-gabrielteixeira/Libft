@@ -1,6 +1,6 @@
 NAME = libft.a
 HEADER = libft.h
-SRC = 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_strlen.c ft_atoi.c
+SRC = 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_strlen.c ft_atoi.c ft_bzero.c ft_calloc.c
 OBJ = ${SRC:.c=.o}
 
 CC = gcc

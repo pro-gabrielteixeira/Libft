@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/28 19:18:59 by gateixei          #+#    #+#             */
-/*   Updated: 2021/11/30 21:56:21 by gateixei         ###   ########.fr       */
+/*   Created: 2021/11/30 18:00:48 by gateixei          #+#    #+#             */
+/*   Updated: 2021/11/30 19:02:37 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-#include <stdlib.h>
+void	ft_bzero(char *str, int size)
+{
+	int	c;
 
-int		ft_isalnum(int c);
-
-int		ft_isalpha(int c);
-
-int		ft_isascii(int c);
-
-int		ft_isdigit(int c);
-
-int		ft_strlen(char *str);
-
-int		ft_atoi(char *str);
-
-void	ft_bzero(char *str, int size);
-
-void	*ft_calloc(int count, int size);
-
-#endif
+	c = 0;
+	while (c <= size)
+		str[c++] = '\0';
+}
