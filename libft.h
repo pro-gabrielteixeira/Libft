@@ -6,7 +6,7 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 19:18:59 by gateixei          #+#    #+#             */
-/*   Updated: 2021/12/01 20:28:26 by gateixei         ###   ########.fr       */
+/*   Updated: 2021/12/06 17:44:36 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,9 @@ int		ft_isprint(int c);
 void	*ft_memcpy(void *dst, const void *src, int size);
 
 void	*ft_memchr(const void *str, int c, int size);
+
+int		ft_memcmp(const void *str1, const void *str2, int n);
+
+void	*ft_memmove(void *dst, const void *src, int len);
 
 #endif
