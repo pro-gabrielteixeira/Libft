@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/28 19:26:44 by gateixei          #+#    #+#             */
-/*   Updated: 2021/12/08 19:52:23 by gateixei         ###   ########.fr       */
+/*   Created: 2021/12/08 17:05:12 by gateixei          #+#    #+#             */
+/*   Updated: 2021/12/08 19:16:43 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_strlcat(char *dst, const char *src, int n)
 {
-	int	result;
-	int	neg;
-	int	c;
+	int		l;
+	int		c;
+	char	source;
 
-	result = 0;
-	neg = 1;
 	c = 0;
-	while (str[c] == ' ' || str[c] == '\t' || str[c] == '\n'
-		|| str[c] == '\v' || str[c] == '\f' || str[c] == '\r')
-		c++;
-	if (str[c] == '-')
+	l = (ft_strlen(dst) - 1);
+	source = *(char *) src;
+	if ((ft_strlen(dst) + ft_strlen(&source)) >= n)
 	{
-		neg = -1;
-		c++;
+		while (l < n || src[c] != '\0')
+			dst[l++] = src[c++];
+		dst[l] = '\0';
+		return (l + 1);
 	}
-	else if (str[c] == '+')
-		c++;
-	while (str[c] >= '0' && str[c] <= '9')
-	{
-		result = (result * 10) + str[c] - '0';
-		c++;
-	}
-	result = result * neg;
-	return (result);
+	else
+		return (ft_strlen(&source) + n);
 }

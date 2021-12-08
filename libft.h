@@ -6,7 +6,7 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 19:18:59 by gateixei          #+#    #+#             */
-/*   Updated: 2021/12/06 19:04:27 by gateixei         ###   ########.fr       */
+/*   Updated: 2021/12/08 18:41:06 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,7 @@ void	*ft_memset(void *b, int c, int len);
 char	*ft_strchr(const char *s, int c);
 
 char	*ft_strdup(const char *s1);
+
+int		ft_strlcat(char *dst, const char *src, int n);
 
 #endif
