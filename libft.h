@@ -6,7 +6,7 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 19:18:59 by gateixei          #+#    #+#             */
-/*   Updated: 2021/12/08 18:41:06 by gateixei         ###   ########.fr       */
+/*   Updated: 2021/12/10 23:31:29 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,17 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
 
 int		ft_strlcat(char *dst, const char *src, int n);
+
+int		ft_strlcpy(char *dst, const char *scr, int n);
+
+int		ft_strncmp(const char *s1, const char *s2, int n);
+
+char	*ft_strnstr(const char *haystake, const char *needle, int len);
+
+char	*ft_strrchr(const char *s, int c);
+
+int		ft_tolower(int c);
+
+int		ft_toupper(int c);
 
 #endif

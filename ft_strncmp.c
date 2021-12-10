@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 17:30:18 by gateixei          #+#    #+#             */
-/*   Updated: 2021/12/10 17:01:01 by gateixei         ###   ########.fr       */
+/*   Created: 2021/12/10 22:07:28 by gateixei          #+#    #+#             */
+/*   Updated: 2021/12/10 22:30:14 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, int len)
+int	ft_strncmp(const char *s1, const char *s2, int n)
 {
-	unsigned char	*str1;
-	unsigned char	*buf;
 	int				c;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
 	c = 0;
-	buf = (unsigned char *) src;
-	str1 = (unsigned char *) dst;
-	if ((buf < str1) && (str1 < (buf + len)))
-		while (--len >= 0)
-			str1[len] = buf[len];
-	else
+	str1 = (unsigned char *) s1;
+	str2 = (unsigned char *) s2;
+	while ((str1[c] != '\0' || str2[c] != '\0') && c < n)
 	{
-		while (c < len)
-		{
-			str1[c] = buf[c];
-			c++;
-		}
+		if (str1[c] != str2[c])
+			return (str1[c] - str2[c]);
+		c++;
 	}
-	return ((void *) str1);
+	return (0);
 }

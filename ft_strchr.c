@@ -6,7 +6,7 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:15:36 by gateixei          #+#    #+#             */
-/*   Updated: 2021/12/06 18:29:47 by gateixei         ###   ########.fr       */
+/*   Updated: 2021/12/10 17:17:11 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strchr(const char *s, int c)
 	int		i;
 
 	i = 0;
-	ch = c - '0';
+	ch = c;
 	ptr = (char *) s;
 	while (s[i] != '\0')
 	{

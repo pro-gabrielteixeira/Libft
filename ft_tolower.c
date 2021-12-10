@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 17:30:18 by gateixei          #+#    #+#             */
-/*   Updated: 2021/12/10 17:01:01 by gateixei         ###   ########.fr       */
+/*   Created: 2021/12/10 23:22:09 by gateixei          #+#    #+#             */
+/*   Updated: 2021/12/10 23:33:15 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, int len)
+int	ft_tolower(int c)
 {
-	unsigned char	*str1;
-	unsigned char	*buf;
-	int				c;
-
-	c = 0;
-	buf = (unsigned char *) src;
-	str1 = (unsigned char *) dst;
-	if ((buf < str1) && (str1 < (buf + len)))
-		while (--len >= 0)
-			str1[len] = buf[len];
+	if (c >= 65 && c <= 90)
+		return (c + 32);
 	else
-	{
-		while (c < len)
-		{
-			str1[c] = buf[c];
-			c++;
-		}
-	}
-	return ((void *) str1);
+		return (c);
 }
