@@ -6,17 +6,17 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 18:00:48 by gateixei          #+#    #+#             */
-/*   Updated: 2021/12/08 19:59:17 by gateixei         ###   ########.fr       */
+/*   Updated: 2021/12/14 19:20:48 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(char *str, int size)
+void	ft_bzero(char *str, size_t n)
 {
 	int	c;
 
 	c = 0;
-	while (c < size)
+	while ((size_t) c < n)
 		str[c++] = '\0';
 }

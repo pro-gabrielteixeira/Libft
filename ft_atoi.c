@@ -6,13 +6,13 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 19:26:44 by gateixei          #+#    #+#             */
-/*   Updated: 2021/12/08 19:52:23 by gateixei         ###   ########.fr       */
+/*   Updated: 2021/12/14 17:37:46 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	result;
 	int	neg;
