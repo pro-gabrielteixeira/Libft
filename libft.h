@@ -6,7 +6,7 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 19:18:59 by gateixei          #+#    #+#             */
-/*   Updated: 2021/12/14 19:42:14 by gateixei         ###   ########.fr       */
+/*   Updated: 2021/12/16 14:35:19 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,7 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);
 
 int		ft_toupper(int c);
+
+char	*ft_substr(const char *s, unsigned int start, size_t len);
 
 #endif
