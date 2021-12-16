@@ -6,7 +6,7 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 19:06:58 by gateixei          #+#    #+#             */
-/*   Updated: 2021/12/14 19:19:44 by gateixei         ###   ########.fr       */
+/*   Updated: 2021/12/16 14:14:07 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_calloc(size_t count, size_t size)
 
 	c = 0;
 	ptr = (unsigned char *) malloc(count * size);
+	if (!ptr)
+		return (0);
 	while ((size_t) c <= (size * count))
 		ptr[c++] = '\0';
 	return ((void *)ptr);

@@ -6,7 +6,7 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:51:49 by gateixei          #+#    #+#             */
-/*   Updated: 2021/12/10 17:27:57 by gateixei         ###   ########.fr       */
+/*   Updated: 2021/12/16 14:14:51 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strdup(const char *s1)
 	c = 0;
 	i = ft_strlen((char *) s1);
 	str = (char *) malloc(i + 1);
+	if (!str)
+		return (0);
 	src = (char *) s1;
 	while (src[c] != '\0')
 	{
