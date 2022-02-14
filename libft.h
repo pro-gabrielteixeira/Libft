@@ -6,7 +6,7 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 19:18:59 by gateixei          #+#    #+#             */
-/*   Updated: 2021/12/16 14:35:19 by gateixei         ###   ########.fr       */
+/*   Updated: 2022/02/14 20:54:30 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int		ft_tolower(int c);
 
 int		ft_toupper(int c);
 
-char	*ft_substr(const char *s, unsigned int start, size_t len);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif
