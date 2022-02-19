@@ -6,7 +6,7 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 18:00:48 by gateixei          #+#    #+#             */
-/*   Updated: 2021/12/14 19:20:48 by gateixei         ###   ########.fr       */
+/*   Updated: 2022/02/18 17:10:11 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_bzero(char *str, size_t n)
 {
-	int	c;
+	size_t	c;
 
 	c = 0;
-	while ((size_t) c < n)
+	while (c < n)
 		str[c++] = '\0';
 }

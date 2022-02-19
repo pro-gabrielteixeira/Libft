@@ -6,7 +6,7 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 17:30:18 by gateixei          #+#    #+#             */
-/*   Updated: 2021/12/16 12:49:45 by gateixei         ###   ########.fr       */
+/*   Updated: 2022/02/19 17:23:41 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	c = 0;
 	buf = (unsigned char *) src;
 	str1 = (unsigned char *) dst;
-	if ((buf < str1) && (str1 < (buf + len)))
+	if (buf < str1)
 		while (len-- > 0)
 			str1[len] = buf[len];
 	else
