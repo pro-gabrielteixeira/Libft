@@ -6,7 +6,7 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 19:18:41 by gateixei          #+#    #+#             */
-/*   Updated: 2022/03/01 20:22:26 by gateixei         ###   ########.fr       */
+/*   Updated: 2022/03/02 17:30:50 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*ft_itoa(int n)
 	else if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	i = count(n);
-	ptr  = malloc((i + 1) * (sizeof(char)));
+	ptr = malloc((i + 1) * (sizeof(char)));
 	if (!ptr)
 		return (0);
 	if (n < 0)
@@ -60,10 +60,4 @@ char	*ft_itoa(int n)
 		n = n / 10;
 	}
 	return (ptr);
-}
-
-int	main(void)
-{
-	printf("%s", ft_itoa(42));
-	return (0);
 }
