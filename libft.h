@@ -6,7 +6,7 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 19:18:59 by gateixei          #+#    #+#             */
-/*   Updated: 2022/02/22 20:00:37 by gateixei         ###   ########.fr       */
+/*   Updated: 2022/03/01 16:39:34 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 
 char	*ft_itoa(int n);
+
+char	**ft_split(char const *s, char c);
 
 #endif

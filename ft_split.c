@@ -6,7 +6,7 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 20:07:07 by gateixei          #+#    #+#             */
-/*   Updated: 2022/02/22 22:55:55 by gateixei         ###   ########.fr       */
+/*   Updated: 2022/03/02 16:37:07 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,14 @@
 #include "libft.h"
 #include <stdio.h>
 
-char	**ft_split(char const *s, char c)
+int	str_count(char *str, char c)
 {
-	char	*str;
-	char	**rtn;
 	int		i;
 	int		j;
 
 	j = 0;
 	i = 0;
-	str = (char *) s;
-	while (str[j] != NULL)
+	while (str[j] != '\0')
 	{
 		if (str[j] == c)
 		{
@@ -33,28 +30,39 @@ char	**ft_split(char const *s, char c)
 			i--;
 		}
 		else	
-			while (str[j] != c && str[j] != NULL)
+			while (str[j] != c && str[j] != '\0')
 				j++;
 		i++;		
 	}
-	printf("%d", i);
-//	rtn = (char **) malloc(i * sizeof(char *));
-//	if (rtn == 0)
-//		return (NULL);
-//	ptr = str;
-//	while (ptr != NULL)
-//	{
-//		str = ptr;
-//		if (ptr[0] == c)
-//		{
-
-	return (NULL);
+	return (i);
 }
 
-int	main(void)
+char	**ft_split(char const *s, char c)
 {
-	char	str[] = "zzzzzzzzzzzzzAAzzzzzzzAAAA";
+	char	*str;
+	char	**rtn;
+	int		k;
+	int		i;
+	int		j;
 
-	ft_split(str, 'A');
-	return (0);
+	if (!s)
+		return (NULL);
+	str = (char *) s;
+	i = str_count(str, c);
+	rtn = (char **) malloc((i + 1) * sizeof(char *));
+	j = 0;
+	k = 0;
+	while (k < i)
+	{
+		while (str[0] == c)
+			str++;
+		while (str[j] != c)
+			j++;
+		if (str)
+			rtn[k++] = ft_substr(str, 0, j);
+		str = &str[j];
+		j = 0;
+	}
+	rtn[i] = NULL;
+	return (rtn);
 }
