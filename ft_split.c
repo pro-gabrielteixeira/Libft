@@ -6,7 +6,7 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 20:07:07 by gateixei          #+#    #+#             */
-/*   Updated: 2022/03/02 18:23:10 by gateixei         ###   ########.fr       */
+/*   Updated: 2022/03/03 21:27:05 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	str_count(const char *str, char c)
 	{
 		if (str[j] == c)
 		{
-			while (str[j] == c)
+			while (str[j] && str[j] == c)
 				j++;
 			i--;
 		}
@@ -53,10 +53,10 @@ char	**ft_split(char const *str, char c)
 	k = 0;
 	while (k < i)
 	{
-		while (str[0] == c)
+		while (str[0] && str[0] == c)
 			str++;
 		j = 0;
-		while (str[j] != c)
+		while (str[j] && str[j] != c)
 			j++;
 		rtn[k++] = ft_substr(str, 0, j);
 		str = &str[j];
