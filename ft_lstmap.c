@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 12:59:38 by gateixei          #+#    #+#             */
-/*   Updated: 2022/03/09 18:00:08 by gateixei         ###   ########.fr       */
+/*   Created: 2022/03/09 20:20:45 by gateixei          #+#    #+#             */
+/*   Updated: 2022/03/09 20:57:42 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-t_list	*ft_lstlast(t_list *lst)
+t_list	*ft_lstmap(t_list *lst, void *(*f) (void *), void (*del) (void*))
 {
+	t_list	*ptr_new;
 	t_list	*curr;
-
-	if (!lst && lst == NULL)
-		return (NULL);
-	curr = lst;
-	while (curr->next && curr->next != NULL)
-		curr = curr->next;
-	return (curr);
+	t_list	new;
+	
 }
