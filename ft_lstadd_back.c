@@ -6,7 +6,7 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:51:02 by gateixei          #+#    #+#             */
-/*   Updated: 2022/03/09 18:38:52 by gateixei         ###   ########.fr       */
+/*   Updated: 2022/03/12 23:36:30 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*curr;
 
-	curr = *lst;
-	if (curr == NULL)
+	if (lst || new)
 	{
-		*lst = new;
-		return ;
+		if (!*lst)
+			*lst = new;
+		else
+		{
+			curr = ft_lstlast(*lst);
+			curr->next = new;
+		}
 	}
-	curr = ft_lstlast(*lst);
-	curr->next = new;
 }

@@ -6,7 +6,7 @@
 #    By: gateixei <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 20:02:58 by gateixei          #+#    #+#              #
-#    Updated: 2022/03/09 20:20:26 by gateixei         ###   ########.fr        #
+#    Updated: 2022/03/12 23:43:50 by gateixei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,27 +27,30 @@ BN = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft
 
 OBJ = ${SRC:.c=.o}
 
-BNOBJ = ${BN: .c=.o}
+BNOBJ = $(BN: .c=.o)
 
 CC = gcc
-CFLAG = -Wextra -Wall -Werror
+CFLAGS = -Wextra -Wall -Werror
 
-all: ${NAME}
+all: $(NAME)
 
-${NAME}: ${SRC}
-	${CC} ${CFLAG} -I${HEADER} -c ${SRC}
-	ar rcs ${NAME} ${OBJ}
+$(NAME): $(SRC)
+	$(CC) $(CFLAGS) -I$(HEADER) -c $(SRC)
+	ar rcs $(NAME) $(OBJ)
 
 clean:
 	rm -rf *.o
 
 fclean: clean
-	rm -rf ${NAME}
+	rm -rf $(NAME)
 
-bonus: ${NAME} ${BNOBJ}
-	${CC} ${CFLAG} -I${HEADER} -c ${BN}
-	ar rcs ${NAME} ${BNOBJ}
+bonus: $(NAME) $(BNOBJ)
+	$(CC) $(CFLAGS) -I$(HEADER) -c $(BN)
+	ar rcs $(NAME) $(BNOBJ)
+
+rebonus:
+	fclean bonus
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re bonus rebonus

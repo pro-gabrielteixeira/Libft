@@ -6,11 +6,16 @@
 /*   By: gateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 19:26:44 by gateixei          #+#    #+#             */
-/*   Updated: 2021/12/14 17:37:46 by gateixei         ###   ########.fr       */
+/*   Updated: 2022/03/13 00:07:56 by gateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	ft_iswhitespace(char c)
+{
+	return ((c >= 9 && c <= 13) || c == 32);
+}
 
 int	ft_atoi(const char *str)
 {
@@ -19,23 +24,17 @@ int	ft_atoi(const char *str)
 	int	c;
 
 	result = 0;
-	neg = 1;
 	c = 0;
-	while (str[c] == ' ' || str[c] == '\t' || str[c] == '\n'
-		|| str[c] == '\v' || str[c] == '\f' || str[c] == '\r')
-		c++;
-	if (str[c] == '-')
+	neg = 1;
+	while (ft_iswhitespace(*str))
+		str++;
+	if (*str == '+' || *str == '-')
+		neg = 44 - *str++;
+	while (ft_isdigit(*str))
 	{
-		neg = -1;
-		c++;
+		if (c++ > 18)
+			return ((neg == -1) - 1);
+		result = (*str++ - 48) + (result * 10);
 	}
-	else if (str[c] == '+')
-		c++;
-	while (str[c] >= '0' && str[c] <= '9')
-	{
-		result = (result * 10) + str[c] - '0';
-		c++;
-	}
-	result = result * neg;
-	return (result);
+	return (result * neg);
 }
