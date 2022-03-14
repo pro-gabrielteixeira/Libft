@@ -6,7 +6,7 @@
 #    By: gateixei <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 20:02:58 by gateixei          #+#    #+#              #
-#    Updated: 2022/03/12 23:43:50 by gateixei         ###   ########.fr        #
+#    Updated: 2022/03/14 15:24:12 by gateixei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,9 +48,6 @@ bonus: $(NAME) $(BNOBJ)
 	$(CC) $(CFLAGS) -I$(HEADER) -c $(BN)
 	ar rcs $(NAME) $(BNOBJ)
 
-rebonus:
-	fclean bonus
-
 re: fclean all
 
-.PHONY: all clean fclean re bonus rebonus
+.PHONY: all clean fclean re bonus
